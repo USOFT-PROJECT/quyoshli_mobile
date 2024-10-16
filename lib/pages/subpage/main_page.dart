@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -35,8 +37,16 @@ class _MainPageState extends State<MainPage> {
   @override
   void initState() {
     super.initState();
-    mainController.pageController = PageController(viewportFraction: 0.94, initialPage: 1);
+    mainController.pageController = PageController(viewportFraction: 0.94, initialPage: mainController.currentPage);
     mainController.getData();
+    mainController.setBannerPeriodicTime();
+  }
+
+  @override
+  void dispose() {
+    mainController.bannerTimer.cancel(); // Cancel the timer when widget is disposed
+    mainController.pageController.dispose(); // Dispose the PageController
+    super.dispose();
   }
 
   @override

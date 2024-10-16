@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,12 +17,31 @@ import '../catalog/product_details_page.dart';
 
 class MainController extends GetxController {
   bool isLoading = true;
+  late Timer bannerTimer;
+  int currentPage = 0;
 
   List<BannerModel> banners = [];
   List<BrandModel> brands = [];
   List<ProductList> productList = [];
 
   late PageController pageController;
+
+  setBannerPeriodicTime(){
+    // Set up a timer to auto-swap banners
+    bannerTimer = Timer.periodic(Duration(seconds: 3), (Timer timer) {
+      if (currentPage < banners.length - 1) {
+        currentPage++;
+      } else {
+        currentPage = 0;
+      }
+
+      pageController.animateToPage(
+        currentPage,
+        duration: Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    });
+  }
 
   getBanners() async {
     LogService.i("Start getting banners");
