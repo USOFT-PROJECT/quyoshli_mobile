@@ -543,22 +543,22 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                           onChange: controller.onLegalChange,
                                         ),
                                         SizedBox(height: 16.h),
-                                        CustomTextField(
-                                          label: "email".tr,
-                                          maxLines: 1,
-                                          textEditingController:
-                                              controller.emailController,
-                                          onChange: (value) {
-                                            controller.onLegalChange(value);
-                                          },
-                                          isValid: controller.emailController
-                                                  .text.isNotEmpty
-                                              ? Utils.isValidEmail(controller
-                                                  .emailController.text)
-                                              : true,
-                                          errorText: "invalid_email".tr,
-                                        ),
-                                        SizedBox(height: 16.h),
+                                        // CustomTextField(
+                                        //   label: "email".tr,
+                                        //   maxLines: 1,
+                                        //   textEditingController:
+                                        //       controller.emailController,
+                                        //   onChange: (value) {
+                                        //     controller.onLegalChange(value);
+                                        //   },
+                                        //   isValid: controller.emailController
+                                        //           .text.isNotEmpty
+                                        //       ? Utils.isValidEmail(controller
+                                        //           .emailController.text)
+                                        //       : true,
+                                        //   errorText: "invalid_email".tr,
+                                        // ),
+                                        // SizedBox(height: 16.h),
                                         CustomTextField(
                                           label: "phone".tr,
                                           textEditingController:
