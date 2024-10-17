@@ -288,9 +288,10 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
                                                                     .product!
                                                                     .priceDiscount,
                                                           )}%",
-                                                          textScaler: TextScaler.linear(1),
-                                                          style:
-                                                          TextStyle(
+                                                          textScaler:
+                                                              TextScaler.linear(
+                                                                  1),
+                                                          style: TextStyle(
                                                             fontSize: 14.sp,
                                                             fontWeight:
                                                                 FontWeight.w600,
@@ -325,7 +326,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
                                                   EdgeInsets.only(bottom: 3.h),
                                               child: Text(
                                                 'with_vat'.tr,
-                                                textScaler: TextScaler.linear(1),
+                                                textScaler:
+                                                    TextScaler.linear(1),
                                                 textAlign: TextAlign.start,
                                                 style: TextStyle(
                                                   fontSize: 16.sp,
@@ -384,48 +386,53 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
 
                                     // shortDescription
                                     Text(
-                                      controller.product!.shortDescription.toString(),
+                                      controller.product!.shortDescription
+                                          .toString(),
                                       textAlign: TextAlign.justify,
                                       textScaler: TextScaler.linear(1),
                                       style: TextStyle(
-                                          fontSize: 16.sp,
-                                          fontWeight: FontWeight.w600,
-                                        ),
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                     ),
 
                                     SizedBox(height: 24.h),
 
                                     // Description Button
                                     GestureDetector(
-                                      onTap: (){
-                                        controller.goDescriptionPage(controller.product!.description!);
+                                      onTap: () {
+                                        controller.goDescriptionPage(
+                                            controller.product!.description!);
                                       },
                                       child: Container(
                                         height: 40,
                                         width: double.infinity,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(12),
+                                          borderRadius:
+                                              BorderRadius.circular(12),
                                           border: Border.all(
-                                            color: Color.fromRGBO(119, 119, 119, 1)
-                                          ),
+                                              color: Color.fromRGBO(
+                                                  119, 119, 119, 1)),
                                         ),
                                         child: Center(
                                           child: Text(
                                             "full_description".tr,
                                             textScaler: TextScaler.linear(1),
                                             style: TextStyle(
-                                              fontSize: 14.sp,
-                                              fontWeight: FontWeight.w600,
-                                              color: Color.fromRGBO(0, 98, 102, 1)
-                                            ),
-                                           ),
+                                                fontSize: 14.sp,
+                                                fontWeight: FontWeight.w600,
+                                                color: Color.fromRGBO(
+                                                    0, 98, 102, 1)),
+                                          ),
                                         ),
                                       ),
                                     ),
 
-                                    if (controller.product!.characteristics!.isNotEmpty)
+                                    if (controller
+                                        .product!.characteristics!.isNotEmpty)
                                       Column(
-                                        crossAxisAlignment:CrossAxisAlignment.stretch,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.stretch,
                                         children: [
                                           Text(
                                             "technical_info".tr,
@@ -437,13 +444,19 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
                                           ),
                                           SizedBox(height: 12.h),
                                           Row(
-                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
                                             children: [
                                               SizedBox(
-                                                width: (MediaQuery.of(context).size.width /2).w,
+                                                width: (MediaQuery.of(context)
+                                                            .size
+                                                            .width /
+                                                        2)
+                                                    .w,
                                                 child: Text(
                                                   "${controller.product!.characteristics?[0].name}",
-                                                  textScaler: TextScaler.linear(1),
+                                                  textScaler:
+                                                      TextScaler.linear(1),
                                                   style: TextStyle(
                                                     fontSize: 14.sp,
                                                     fontWeight: FontWeight.w400,
@@ -458,7 +471,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
                                                         ?.value
                                                         ?.decimalStr ??
                                                     '',
-                                                textScaler: TextScaler.linear(1),
+                                                textScaler:
+                                                    TextScaler.linear(1),
                                                 style: TextStyle(
                                                   fontSize: 14.sp,
                                                   fontWeight: FontWeight.w600,
@@ -481,55 +495,53 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
                                               },
                                             ),
                                           ),
-                                          SizedBox(height: 12.h),
-                                          Visibility(
-                                            visible:
-                                                controller.product!.dataSheet !=
-                                                    null,
-                                            child: MaterialButton(
-                                              materialTapTargetSize:
-                                                  MaterialTapTargetSize
-                                                      .shrinkWrap,
-                                              elevation: 0,
-                                              height: 40.h,
-                                              onPressed: () {
-                                                launchInBrowser(controller
-                                                    .product!.dataSheet!);
-                                              },
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(12.r),
-                                                side: const BorderSide(
-                                                  color: Color.fromRGBO(
-                                                      119, 119, 119, 1),
-                                                ),
-                                              ),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Image.asset(
-                                                    "assets/icons/ic_document.png",
-                                                    height: 20.w,
-                                                    width: 20.w,
-                                                  ),
-                                                  SizedBox(width: 4.w),
-                                                  Text(
-                                                    "download_datasheet".tr,
-                                                    textScaler: TextScaler.linear(1),
-                                                    style: TextStyle(
-                                                        fontSize: 14.sp,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        color: Color.fromRGBO(
-                                                            0, 98, 102, 1)),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
                                         ],
                                       ),
+
+                                    SizedBox(height: 24.h),
+                                    Visibility(
+                                      visible:
+                                          controller.product!.dataSheet != null,
+                                      child: MaterialButton(
+                                        materialTapTargetSize:
+                                            MaterialTapTargetSize.shrinkWrap,
+                                        elevation: 0,
+                                        height: 40.h,
+                                        onPressed: () {
+                                          launchInBrowser(
+                                              controller.product!.dataSheet!);
+                                        },
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(12.r),
+                                          side: const BorderSide(
+                                            color: Color.fromRGBO(
+                                                119, 119, 119, 1),
+                                          ),
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Image.asset(
+                                              "assets/icons/ic_document.png",
+                                              height: 20.w,
+                                              width: 20.w,
+                                            ),
+                                            SizedBox(width: 4.w),
+                                            Text(
+                                              "download_datasheet".tr,
+                                              textScaler: TextScaler.linear(1),
+                                              style: TextStyle(
+                                                  fontSize: 14.sp,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: Color.fromRGBO(
+                                                      0, 98, 102, 1)),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ),
