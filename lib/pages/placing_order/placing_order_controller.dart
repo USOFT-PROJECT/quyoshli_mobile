@@ -49,12 +49,23 @@ class PlacingOrderController extends GetxController {
   int? regionIndex;
   int branchIndex = 0;
   int installationIndex = 0;
-  int deliveryPrice = 0;
 
   bool isDataReady = true;
   bool isAddressReady = false;
 
   User? user;
+
+  int calculateTotalPrice() {
+    int basePrice = checkoutPreviewResponse.data?.totalPrice ?? 0;
+    int delivery = isDeliverMyself
+        ? 0
+        : (checkoutPreviewResponse.data?.deliveryPrice ?? 0);
+    int installation = installationIndex == 1
+        ? (checkoutPreviewResponse.data?.installationPrice ?? 0)
+        : 0;
+
+    return basePrice + delivery + installation;
+  }
 
   apiLoadUser() async {
     var response =

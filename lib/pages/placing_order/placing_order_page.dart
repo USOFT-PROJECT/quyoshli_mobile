@@ -322,8 +322,8 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                             "client".tr,
                                             textScaler: TextScaler.linear(1),
                                             style: TextStyle(
-                                                fontWeight: FontWeight.w600,
-                                                fontSize: 16.sp,
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 16.sp,
                                             ),
                                           ),
                                         ],
@@ -359,7 +359,8 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                                   child: Center(
                                                     child: Text(
                                                       "physical".tr,
-                                                      textScaler: TextScaler.linear(1),
+                                                      textScaler:
+                                                          TextScaler.linear(1),
                                                       style: TextStyle(
                                                         fontSize: 14.sp,
                                                         fontWeight:
@@ -392,7 +393,8 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                                   child: Center(
                                                     child: Text(
                                                       "legal".tr,
-                                                      textScaler: TextScaler.linear(1),
+                                                      textScaler:
+                                                          TextScaler.linear(1),
                                                       style: TextStyle(
                                                         fontSize: 14.sp,
                                                         fontWeight:
@@ -455,7 +457,6 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                         const SizedBox(height: 16),
                                         CustomTextField(
                                           label: "inn".tr,
-
                                           textEditingController:
                                               controller.innController,
                                           type: TextInputType.number,
@@ -565,7 +566,8 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                               controller.legalPhoneNumber,
                                           formatter: Utils.phoneNumberMask,
                                           type: TextInputType.phone,
-                                          onChange: controller.onLegalPhonechange,
+                                          onChange:
+                                              controller.onLegalPhonechange,
                                           isValid: controller.legalPhoneNumber
                                                       .text.length ==
                                                   17 ||
@@ -589,10 +591,11 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                             children: [
                                               Text(
                                                 "delivery_address".tr,
-                                                textScaler: TextScaler.linear(1),
+                                                textScaler:
+                                                    TextScaler.linear(1),
                                                 style: TextStyle(
-                                                    fontWeight: FontWeight.w600,
-                                                    fontSize: 16.sp,
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: 16.sp,
                                                 ),
                                               ),
                                             ],
@@ -601,20 +604,20 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
 
                                           //region
                                           CustomMenuButton(
-                                              index: controller.regionIndex,
-                                              options: controller.regions,
-                                              onChange: controller.onRegionChange,
-                                              label: "region".tr,
+                                            index: controller.regionIndex,
+                                            options: controller.regions,
+                                            onChange: controller.onRegionChange,
+                                            label: "region".tr,
                                           ),
 
                                           SizedBox(height: 16.h),
 
                                           // Dropdown for city
                                           CustomMenuButton(
-                                              index: controller.cityIndex,
-                                              options: controller.cities,
-                                              onChange: controller.onCityChange,
-                                              label: "city".tr,
+                                            index: controller.cityIndex,
+                                            options: controller.cities,
+                                            onChange: controller.onCityChange,
+                                            label: "city".tr,
                                           ),
                                           // Dropdown for City
                                           SizedBox(height: 16.h),
@@ -657,15 +660,15 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                           "pickup_point".tr,
                                           textScaler: TextScaler.linear(1),
                                           style: TextStyle(
-                                              fontWeight: FontWeight.w600,
-                                              fontSize: 16.sp,
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 16.sp,
                                           ),
                                         ),
                                         SizedBox(height: 16.h),
                                         BranchWidget(
-                                            branches: controller.branches,
-                                            itemIndex: controller.branchIndex,
-                                            onChange: controller.onBranchChange,
+                                          branches: controller.branches,
+                                          itemIndex: controller.branchIndex,
+                                          onChange: controller.onBranchChange,
                                         )
                                       ],
                                     ),
@@ -682,8 +685,8 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                               "installation".tr,
                                               textScaler: TextScaler.linear(1),
                                               style: TextStyle(
-                                                  fontWeight: FontWeight.w600,
-                                                  fontSize: 16.sp,
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: 16.sp,
                                               ),
                                             ),
                                           ],
@@ -691,8 +694,9 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                         SizedBox(height: 16.h),
 
                                         InstallationWidget(
-                                            index: controller.installationIndex,
-                                            onChange: controller.changeInstallType,
+                                          index: controller.installationIndex,
+                                          onChange:
+                                              controller.changeInstallType,
                                         ),
 
                                         SizedBox(height: 32.h),
@@ -713,7 +717,8 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                             children: [
                                               Text(
                                                 "your_order".tr,
-                                                textScaler: TextScaler.linear(1),
+                                                textScaler:
+                                                    TextScaler.linear(1),
                                                 style: TextStyle(
                                                   fontSize: 16.sp,
                                                   fontWeight: FontWeight.w600,
@@ -748,13 +753,16 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                                       Expanded(
                                                         child: SizedBox(
                                                           width: (MediaQuery.of(
-                                                                      context)
-                                                                  .size
-                                                                  .width /
-                                                              2).w,
+                                                                          context)
+                                                                      .size
+                                                                      .width /
+                                                                  2)
+                                                              .w,
                                                           child: Text(
                                                             "${product.count}x ${product.name}",
-                                                            textScaler: TextScaler.linear(1),
+                                                            textScaler:
+                                                                TextScaler
+                                                                    .linear(1),
                                                             // "${(product.count! * product.price!.toInt()).decimal} сум",
                                                             style: TextStyle(
                                                               color: AppColors
@@ -771,7 +779,9 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                                       Text(
                                                         "${(product.count! * product.price!.toInt()).decimal} ${"currency".tr}",
                                                         // "${product.price?.decimal.toString()} сум",
-                                                        textScaler: TextScaler.linear(1),
+                                                        textScaler:
+                                                            TextScaler.linear(
+                                                                1),
                                                         style: TextStyle(
                                                           color: AppColors
                                                               .textColor,
@@ -805,17 +815,20 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                                 Expanded(
                                                   child: Text(
                                                     "delivery".tr,
-                                                    textScaler: TextScaler.linear(1),
+                                                    textScaler:
+                                                        TextScaler.linear(1),
                                                     style: TextStyle(
                                                       fontSize: 14.sp,
-                                                      fontWeight: FontWeight.w400,
+                                                      fontWeight:
+                                                          FontWeight.w400,
                                                     ),
                                                   ),
                                                 ),
                                                 Text(
                                                   // "${Utils.putSpace(controller.deliveryPrice.toString())} сум",
-                                                  "${controller.deliveryPrice.decimal.toString()} ${"currency".tr}",
-                                                  textScaler: TextScaler.linear(1),
+                                                  "${controller.checkoutPreviewResponse.data!.deliveryPrice?.decimal.toString()} ${"currency".tr}",
+                                                  textScaler:
+                                                      TextScaler.linear(1),
                                                   style: TextStyle(
                                                     fontSize: 14.sp,
                                                     fontWeight: FontWeight.w600,
@@ -833,7 +846,8 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                                 Expanded(
                                                   child: Text(
                                                     "installation".tr,
-                                                    textScaler: TextScaler.linear(1),
+                                                    textScaler:
+                                                        TextScaler.linear(1),
                                                     style: TextStyle(
                                                       fontSize: 14.sp,
                                                       fontWeight:
@@ -842,9 +856,9 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                                   ),
                                                 ),
                                                 Text(
-                                                  Utils.putSpace(
-                                                      "${controller.checkoutPreviewResponse.data!.installationPrice.toString() ?? ""} ${"currency".tr}"),
-                                                  textScaler: TextScaler.linear(1),
+                                                  "${controller.checkoutPreviewResponse.data!.installationPrice?.decimal} ${"currency".tr}",
+                                                  textScaler:
+                                                      TextScaler.linear(1),
                                                   style: TextStyle(
                                                     fontSize: 14.sp,
                                                     fontWeight: FontWeight.w600,
@@ -873,22 +887,23 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                               Expanded(
                                                 child: Text(
                                                   "total".tr,
-                                                  textScaler: TextScaler.linear(1),
+                                                  textScaler:
+                                                      TextScaler.linear(1),
                                                   style: TextStyle(
                                                     fontSize: 16.sp,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                                 ),
                                               ),
+                                              
                                               Text(
-                                                // Utils.putSpace("${controller.checkoutPreviewResponse.data?.totalPrice.toString() ?? ""} сум"),
-                                                "${controller.checkoutPreviewResponse.data?.totalPrice?.decimal} ${"currency".tr}",
+                                                "${controller.calculateTotalPrice().decimal} ${"currency".tr}",
                                                 textScaler: TextScaler.linear(1),
                                                 style: TextStyle(
                                                   fontSize: 24.sp,
                                                   fontWeight: FontWeight.w600,
                                                 ),
-                                              )
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -930,7 +945,7 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                     Expanded(
                       child: Text(
                         controller.checkoutPreviewResponse.data != null
-                            ? "${controller.checkoutPreviewResponse.data?.totalPrice?.decimal} ${"currency".tr}"
+                            ?  "${controller.calculateTotalPrice().decimal} ${"currency".tr}"
                             : '',
                         textScaler: TextScaler.linear(1),
                         style: TextStyle(
@@ -985,16 +1000,16 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                             alignment: Alignment.center,
                             padding: EdgeInsets.symmetric(horizontal: 16.w),
                             decoration: BoxDecoration(
-                                color: const Color(0xff1111111f),
-                                borderRadius: BorderRadius.circular(12.r),
+                              color: const Color(0xff1111111f),
+                              borderRadius: BorderRadius.circular(12.r),
                             ),
                             child: Text(
                               "design".tr,
                               textScaler: TextScaler.linear(1),
                               style: TextStyle(
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 16.sp,
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16.sp,
                               ),
                             ),
                           )
