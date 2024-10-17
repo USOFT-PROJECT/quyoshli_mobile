@@ -161,5 +161,8 @@ final Map<String, String> uzUZ = {
   "error": "Xatolik yuz berdi",
   "confirm": "Tasdiqlash",
   "confirm_del": "Siz profilingizni o'chirib tashlamoqchimisiz?",
-  "no_connection": "Internet bilan aloqa yo'q"
+  "no_connection": "Internet bilan aloqa yo'q",
+
+  "full_description": "To'liq tavsif",
+  "product_description": "Mahsulot tavsifi",
 };

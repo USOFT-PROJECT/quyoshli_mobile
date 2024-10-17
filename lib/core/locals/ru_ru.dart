@@ -162,5 +162,8 @@ final Map<String, String> ruRU = {
   "error": "Произошла ошибка",
   "confirm": "Подтверждать",
   "confirm_del": "Вы хотите удалить свою учетную запись?",
-  "no_connection": "Нет подключения к интернету"
+  "no_connection": "Нет подключения к интернету",
+
+  "full_description": "Полное описание",
+  "product_description": "Описание товара",
 };

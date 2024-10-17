@@ -41,6 +41,8 @@ class ShowProduct {
   bool? isAvailable;
   int? count;
   String? dataSheet;
+  String? shortDescription;
+  String? description;
   List<Screen>? screens;
   List<Characteristic>? characteristics;
   int? inCart;
@@ -61,6 +63,8 @@ class ShowProduct {
     this.isAvailable,
     this.count,
     this.dataSheet,
+    this.shortDescription,
+    this.description,
     this.screens,
     this.characteristics,
     this.inCart
@@ -82,6 +86,8 @@ class ShowProduct {
     isAvailable: json["is_available"],
     count: json["count"],
     dataSheet: json["data_sheet"],
+    shortDescription: json["short_description"],
+    description: json["description"],
     screens: json["screens"] == null ? [] : List<Screen>.from(json["screens"]!.map((x) => Screen.fromJson(x))),
     characteristics: json["characteristics"] == null ? [] : List<Characteristic>.from(json["characteristics"]!.map((x) => Characteristic.fromJson(x))),
     inCart: json["in_cart"],
@@ -103,6 +109,8 @@ class ShowProduct {
     "is_available": isAvailable,
     "count": count,
     "data_sheet": dataSheet,
+    "shortDescription": shortDescription,
+    "description": description,
     "screens": screens == null ? [] : List<dynamic>.from(screens!.map((x) => x.toJson())),
     "characteristics": characteristics == null ? [] : List<dynamic>.from(characteristics!.map((x) => x.toJson())),
     "in_cart": inCart,

@@ -380,12 +380,52 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
                                         ),
                                       ],
                                     ),
-                                    SizedBox(height: 40.h),
-                                    if (controller
-                                        .product!.characteristics!.isNotEmpty)
+                                    SizedBox(height: 24.h),
+
+                                    // shortDescription
+                                    Text(
+                                      controller.product!.shortDescription.toString(),
+                                      textAlign: TextAlign.justify,
+                                      textScaler: TextScaler.linear(1),
+                                      style: TextStyle(
+                                          fontSize: 16.sp,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                    ),
+
+                                    SizedBox(height: 24.h),
+
+                                    // Description Button
+                                    GestureDetector(
+                                      onTap: (){
+                                        controller.goDescriptionPage(controller.product!.description!);
+                                      },
+                                      child: Container(
+                                        height: 40,
+                                        width: double.infinity,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(12),
+                                          border: Border.all(
+                                            color: Color.fromRGBO(119, 119, 119, 1)
+                                          ),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            "full_description".tr,
+                                            textScaler: TextScaler.linear(1),
+                                            style: TextStyle(
+                                              fontSize: 14.sp,
+                                              fontWeight: FontWeight.w600,
+                                              color: Color.fromRGBO(0, 98, 102, 1)
+                                            ),
+                                           ),
+                                        ),
+                                      ),
+                                    ),
+
+                                    if (controller.product!.characteristics!.isNotEmpty)
                                       Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.stretch,
+                                        crossAxisAlignment:CrossAxisAlignment.stretch,
                                         children: [
                                           Text(
                                             "technical_info".tr,
@@ -397,14 +437,10 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
                                           ),
                                           SizedBox(height: 12.h),
                                           Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
+                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                             children: [
-                                              Container(
-                                                width: (MediaQuery.of(context)
-                                                        .size
-                                                        .width /
-                                                    2).w,
+                                              SizedBox(
+                                                width: (MediaQuery.of(context).size.width /2).w,
                                                 child: Text(
                                                   "${controller.product!.characteristics?[0].name}",
                                                   textScaler: TextScaler.linear(1),

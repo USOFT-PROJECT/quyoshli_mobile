@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:quyoshli/pages/catalog/description_page.dart';
 import 'package:quyoshli/pages/login/login_page.dart';
 import 'package:quyoshli/pages/subpage/main_controller.dart';
 import 'package:quyoshli/services/db_service.dart';
@@ -13,6 +14,10 @@ class ProductDetailController extends GetxController {
   int selectedImage = 0;
 
   int count = 0;
+
+  goDescriptionPage(String description){
+    Get.to(DescriptionPage(description: description));
+  }
 
   void updateCount(int inCart) {
     count = inCart;
