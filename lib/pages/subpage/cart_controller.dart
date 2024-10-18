@@ -29,6 +29,7 @@ class CartController extends GetxController {
     var result = cartModelFromJson(response);
     cart = result;
 
+
     // Calculate the total count for readySolutions products
     readySolutionsCount = 0; // Reset before summing
     if (cart.data!.readySolutions!.products != null) {

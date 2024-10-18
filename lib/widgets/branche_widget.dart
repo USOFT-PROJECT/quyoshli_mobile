@@ -11,7 +11,7 @@ class BranchWidget extends StatelessWidget {
       required this.onChange});
 
   final List<BranchModel> branches;
-  final int itemIndex;
+  final int? itemIndex;
   final Function(int index) onChange;
 
   @override

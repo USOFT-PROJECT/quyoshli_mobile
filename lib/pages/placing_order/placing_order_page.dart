@@ -6,7 +6,6 @@ import 'package:quyoshli/core/app_colors.dart';
 import 'package:quyoshli/core/ext/num_ext.dart';
 import 'package:quyoshli/models/cart/cart_model.dart';
 import 'package:quyoshli/pages/placing_order/placing_order_controller.dart';
-import 'package:quyoshli/services/log_service.dart';
 import 'package:quyoshli/services/utils_service.dart';
 import 'package:quyoshli/widgets/branche_widget.dart';
 import 'package:quyoshli/widgets/custom_menu_button.dart';
@@ -41,7 +40,6 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
 
     controller.phoneController = TextEditingController(text: '+998 ');
     controller.nameController = TextEditingController();
-
 
     //legal
     controller.legalNameController = TextEditingController();
@@ -694,13 +692,11 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                           ],
                                         ),
                                         SizedBox(height: 16.h),
-
                                         InstallationWidget(
                                           index: controller.installationIndex,
                                           onChange:
                                               controller.changeInstallType,
                                         ),
-
                                         SizedBox(height: 32.h),
                                       ],
                                     ),
@@ -856,7 +852,8 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                                 ),
                                                 Text(
                                                   "${controller.resCheckout?.installationPrice?.decimal ?? 0} ${"currency".tr}",
-                                                  textScaler: TextScaler.linear(1),
+                                                  textScaler:
+                                                      TextScaler.linear(1),
                                                   style: TextStyle(
                                                     fontSize: 14.sp,
                                                     fontWeight: FontWeight.w600,
@@ -893,10 +890,10 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                                   ),
                                                 ),
                                               ),
-                                              
                                               Text(
                                                 "${controller.calculateTotalPrice().decimal} ${"currency".tr}",
-                                                textScaler: TextScaler.linear(1),
+                                                textScaler:
+                                                    TextScaler.linear(1),
                                                 style: TextStyle(
                                                   fontSize: 24.sp,
                                                   fontWeight: FontWeight.w600,
@@ -943,7 +940,7 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                     Expanded(
                       child: Text(
                         controller.checkoutPreviewResponse.data != null
-                            ?  "${controller.calculateTotalPrice().decimal} ${"currency".tr}"
+                            ? "${controller.calculateTotalPrice().decimal} ${"currency".tr}"
                             : '',
                         textScaler: TextScaler.linear(1),
                         style: TextStyle(
@@ -955,7 +952,7 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
 
                     // Оформить button
                     (controller.isDeliverMyself
-                                ? true
+                                ? controller.branchIndex != null
                                 : (controller.cityIndex != null &&
                                     controller.regionIndex != null &&
                                     controller
@@ -976,7 +973,6 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                             .bankNumberController.text.length ==
                                         20) &&
                                     (controller.fioDirector.text.length >= 5) &&
-                                    
                                     (controller
                                             .legalPhoneNumber.text.length ==
                                         17) &&

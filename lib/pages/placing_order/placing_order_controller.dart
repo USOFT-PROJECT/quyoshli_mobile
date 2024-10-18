@@ -49,7 +49,8 @@ class PlacingOrderController extends GetxController {
   List<City> cities = [];
   int? cityIndex;
   int? regionIndex;
-  int branchIndex = 0;
+  int? branchIndex;
+
   int installationIndex = 0;
 
   bool isDataReady = true;
@@ -228,7 +229,7 @@ class PlacingOrderController extends GetxController {
           "home": homeController.text,
           "landmark": orienterController.text
         },
-      if (isDeliverMyself) "branch_id": branches[branchIndex].id,
+      if (isDeliverMyself) "branch_id": branches[branchIndex ?? 0].id,
       "with_installation": installationIndex == 1,
       "payment_type": "",
       if (!isPhysical) "with_didox": true,
