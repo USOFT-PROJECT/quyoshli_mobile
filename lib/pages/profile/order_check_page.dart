@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:quyoshli/config/root_binding.dart';
+import 'package:quyoshli/core/ext/num_ext.dart';
 import 'package:quyoshli/models/profile/order_show_model.dart';
 import 'package:styled_divider/styled_divider.dart';
 
@@ -52,7 +53,10 @@ class _OrderCheckPageState extends State<OrderCheckPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: Text("${"order".tr} №${order?.id ?? ''}", textScaler: TextScaler.linear(1),),
+        title: Text(
+          "${"order".tr} №${order?.id ?? ''}",
+          textScaler: TextScaler.linear(1),
+        ),
       ),
       body: isLoading
           ? const Center(child: CircularProgressIndicator())
@@ -185,7 +189,7 @@ class _OrderCheckPageState extends State<OrderCheckPage> {
                     ),
 
                     // С установкой
-                    order?.withInstallation == true
+                    order.withInstallation == true
                         ? Column(
                             children: [
                               SizedBox(height: 12.h),
@@ -225,7 +229,7 @@ class _OrderCheckPageState extends State<OrderCheckPage> {
                                     ),
                                   ),
                                   Text(
-                                    order.priceMaster.toString(),
+                                    "${Utils.putSpace(order.priceMaster!.decimal.toString())} ${"currency".tr}",
                                     textScaler: TextScaler.linear(1),
                                     style: TextStyle(
                                       fontSize: 14.sp,
@@ -405,7 +409,7 @@ class _OrderCheckPageState extends State<OrderCheckPage> {
                               Text(
                                 "client_type".tr,
                                 textScaler: TextScaler.linear(1),
-                                style:  TextStyle(
+                                style: TextStyle(
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w400,
                                 ),
@@ -486,7 +490,7 @@ class _OrderCheckPageState extends State<OrderCheckPage> {
                               ),
                             ],
                           ),
-                           SizedBox(height: 12.h),
+                          SizedBox(height: 12.h),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -499,7 +503,8 @@ class _OrderCheckPageState extends State<OrderCheckPage> {
                                 ),
                               ),
                               SizedBox(
-                                width: (MediaQuery.of(context).size.width / 2).w,
+                                width:
+                                    (MediaQuery.of(context).size.width / 2).w,
                                 child: Text(
                                   "${order.legalInformation?.bankName}",
                                   textScaler: TextScaler.linear(1),
@@ -743,7 +748,7 @@ class _OrderCheckPageState extends State<OrderCheckPage> {
                                 child: Text(
                                   textAlign: TextAlign.end,
                                   textScaler: TextScaler.linear(1),
-                                  "${order.priceDelivery}",
+                                  "${order.priceDelivery?.decimal} ${"currency".tr}",
                                   style: TextStyle(
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.w600,
@@ -777,7 +782,7 @@ class _OrderCheckPageState extends State<OrderCheckPage> {
                         ),
                         Text(
                           textAlign: TextAlign.end,
-                          "${Utils.putSpace(order.priceProducts.toString())} ${"currency".tr}",
+                          "${Utils.putSpace(order.totalAmount.toString())} ${"currency".tr}",
                           textScaler: TextScaler.linear(1),
                           style: TextStyle(
                             fontSize: 24.sp,

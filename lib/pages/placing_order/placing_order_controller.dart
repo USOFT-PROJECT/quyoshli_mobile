@@ -17,6 +17,8 @@ class PlacingOrderController extends GetxController {
   CheckoutPreviewResponseModel checkoutPreviewResponse =
       CheckoutPreviewResponseModel(data: CheckoutPreviewData(products: []));
 
+  CheckoutPreviewData? resCheckout;
+
   bool isDeliverMyself = false;
   bool isInstallMaster = true;
   bool isPhysical = true;
@@ -56,15 +58,15 @@ class PlacingOrderController extends GetxController {
   User? user;
 
   int calculateTotalPrice() {
-    int basePrice = checkoutPreviewResponse.data?.totalPrice ?? 0;
-    // int delivery = isDeliverMyself
-    //     ? 0
-    //     : (checkoutPreviewResponse.data?.deliveryPrice ?? 0);
+    int basePrice = checkoutPreviewResponse.data?.productPrice ?? 0;
+    int delivery = isDeliverMyself
+        ? 0
+        : (checkoutPreviewResponse.data?.deliveryPrice ?? 0);
     int installation = installationIndex == 1
         ? (checkoutPreviewResponse.data?.installationPrice ?? 0)
         : 0;
 
-    return basePrice + installation;
+    return basePrice + installation + delivery;
   }
 
   apiLoadUser() async {
@@ -251,6 +253,7 @@ class PlacingOrderController extends GetxController {
   //checkout
   checkout(int? cityId) async {
     var params = {
+      "type": "ready_solutions",
       "city_id": cityId,
       "products": List.generate(
         products.products!.length,
@@ -261,11 +264,14 @@ class PlacingOrderController extends GetxController {
       )
     };
 
-    LogService.i(params.toString());
+    LogService.w(params.toString());
     var response = await Network.POST(Network.API_CHECKOUT_PREVIEW, params);
     LogService.d("response +++++++++++++++ : ${response ?? "no response"}");
+
     if (response != null) {
       checkoutPreviewResponse = checkoutPreviewResponseModelFromJson(response);
+      resCheckout = checkoutPreviewResponse.data;
+      LogService.w(checkoutPreviewResponse.data!.installationPrice.toString());
       update();
     }
   }

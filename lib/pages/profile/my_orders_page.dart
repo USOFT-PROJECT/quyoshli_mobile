@@ -108,7 +108,8 @@ class _MyOrdersPageState extends State<MyOrdersPage> {
         // height: 116,
         width: double.infinity,
         margin: EdgeInsets.only(top: 16.h, right: 16.w, left: 16.w),
-        padding: EdgeInsets.only(top: 12.h, bottom: 12.h, right: 16.w, left: 16.w),
+        padding:
+            EdgeInsets.only(top: 12.h, bottom: 12.h, right: 16.w, left: 16.w),
         decoration: BoxDecoration(
           color: const Color.fromRGBO(231, 234, 231, 1),
           borderRadius: BorderRadius.circular(12.r),

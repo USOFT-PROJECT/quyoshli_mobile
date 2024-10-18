@@ -104,6 +104,8 @@ class _CartPageState extends State<CartPage> {
                                         product: controller.cart.data!
                                             .readySolutions!.products![index],
                                         delete: controller.deleteItem,
+                                        increase: controller.addItem,
+                                        decrease: controller.removeItem,
                                       );
                                     },
                                   ),

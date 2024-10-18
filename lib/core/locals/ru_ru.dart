@@ -124,6 +124,7 @@ final Map<String, String> ruRU = {
   "delivery_details": "Детали доставки",
   "delivery_type": "Тип доставки",
   "delivery": "Доставка",
+  "cost_installation": "Стоимость установки:",
   "delivery_cost": "Стоимость доставки:",
   "delivery_address": "Адрес доставки:",
   "pickup": "Самовывоз",

@@ -6,6 +6,7 @@ import 'package:quyoshli/core/app_colors.dart';
 import 'package:quyoshli/core/ext/num_ext.dart';
 import 'package:quyoshli/models/cart/cart_model.dart';
 import 'package:quyoshli/pages/placing_order/placing_order_controller.dart';
+import 'package:quyoshli/services/log_service.dart';
 import 'package:quyoshli/services/utils_service.dart';
 import 'package:quyoshli/widgets/branche_widget.dart';
 import 'package:quyoshli/widgets/custom_menu_button.dart';
@@ -40,6 +41,7 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
 
     controller.phoneController = TextEditingController(text: '+998 ');
     controller.nameController = TextEditingController();
+
 
     //legal
     controller.legalNameController = TextEditingController();
@@ -856,9 +858,8 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                                   ),
                                                 ),
                                                 Text(
-                                                  "${controller.checkoutPreviewResponse.data!.installationPrice?.decimal} ${"currency".tr}",
-                                                  textScaler:
-                                                      TextScaler.linear(1),
+                                                  "${controller.resCheckout?.installationPrice?.decimal ?? 0} ${"currency".tr}",
+                                                  textScaler: TextScaler.linear(1),
                                                   style: TextStyle(
                                                     fontSize: 14.sp,
                                                     fontWeight: FontWeight.w600,
