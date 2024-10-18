@@ -54,7 +54,7 @@ class _OrderCheckPageState extends State<OrderCheckPage> {
       appBar: AppBar(
         centerTitle: false,
         title: Text(
-          "${"order".tr} №${order?.id ?? ''}",
+          "${"order".tr} №${order.id ?? ''}",
           textScaler: TextScaler.linear(1),
         ),
       ),

@@ -584,7 +584,7 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
 
                                   SizedBox(height: 32.h),
 
-                                  // if is not delivery
+                                  // if delivery
                                   if (!controller.isDeliverMyself)
                                     SizedBox(
                                       child: Column(
@@ -702,9 +702,6 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                         ),
 
                                         SizedBox(height: 32.h),
-                                        // First Option
-
-                                        // Second Option
                                       ],
                                     ),
 
@@ -979,9 +976,7 @@ class _PlacingOrderPageState extends State<PlacingOrderPage> {
                                             .bankNumberController.text.length ==
                                         20) &&
                                     (controller.fioDirector.text.length >= 5) &&
-                                    Utils
-                                        .isValidEmail(
-                                            controller.emailController.text) &&
+                                    
                                     (controller
                                             .legalPhoneNumber.text.length ==
                                         17) &&

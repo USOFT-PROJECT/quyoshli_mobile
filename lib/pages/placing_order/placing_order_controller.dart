@@ -215,7 +215,7 @@ class PlacingOrderController extends GetxController {
               "payment_account": bankNumberController.text,
               "oked": okedController.text,
               "address": legalAddressController.text,
-              "email": emailController.text,
+              // "email": emailController.text,
               "phone":
                   legalPhoneNumber.text.removeAllWhitespace.replaceAll('+', '')
             },
