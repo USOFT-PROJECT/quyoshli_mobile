@@ -294,7 +294,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   color: const Color.fromRGBO(241, 241, 241, 1),
                                 ),
                                 child: Container(
-                                  height: 24.w,
+                                  height: 24.h,
                                   width: 24.w,
                                   child: Image.asset(
                                     'assets/icons/ic_lang.png',
@@ -466,11 +466,11 @@ class _ProfilePageState extends State<ProfilePage> {
                   children: [
                     const SizedBox(height: 50),
                     SizedBox(
-                      height: 80,
-                      width: 80,
+                      height: 80.h,
+                      width: 80.w,
                       child: Image.asset("assets/images/im_profile.png"),
                     ),
-                    const SizedBox(height: 24),
+                     SizedBox(height: 24.h),
                     Container(
                       // height: 56,
                       // width: 173,
@@ -485,7 +485,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    const SizedBox(height: 8),
+                     SizedBox(height: 8.h),
                     Text(
                       "please_login".tr,
                       textScaleFactor: 1.0,
@@ -493,7 +493,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           fontSize: 14.sp, fontWeight: FontWeight.w400),
                       textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: 24),
+                     SizedBox(height: 24.h),
 
                     // login button
                     Container(

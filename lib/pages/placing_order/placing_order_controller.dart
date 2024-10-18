@@ -182,15 +182,15 @@ class PlacingOrderController extends GetxController {
   }
 
   onLegalPhonechange(String value) {
-    if (legalNameController.text.isEmpty) {
-      legalNameController.text = countryCode;
-      legalNameController.selection = TextSelection.fromPosition(
-          TextPosition(offset: legalNameController.text.length));
-    } else if (!legalNameController.text.startsWith(countryCode)) {
-      legalNameController.text =
-          countryCode + legalNameController.text.replaceAll(countryCode, '');
-      legalNameController.selection = TextSelection.fromPosition(
-          TextPosition(offset: legalNameController.text.length));
+    if (legalPhoneNumber.text.isEmpty) {
+      legalPhoneNumber.text = countryCode;
+      legalPhoneNumber.selection = TextSelection.fromPosition(
+          TextPosition(offset: legalPhoneNumber.text.length));
+    } else if (!legalPhoneNumber.text.startsWith(countryCode)) {
+      legalPhoneNumber.text =
+          countryCode + legalPhoneNumber.text.replaceAll(countryCode, '');
+      legalPhoneNumber.selection = TextSelection.fromPosition(
+          TextPosition(offset: legalPhoneNumber.text.length));
     }
     update();
   }
