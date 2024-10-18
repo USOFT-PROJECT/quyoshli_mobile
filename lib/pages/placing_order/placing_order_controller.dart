@@ -216,14 +216,11 @@ class PlacingOrderController extends GetxController {
               "payment_account": bankNumberController.text,
               "oked": okedController.text,
               "address": legalAddressController.text,
-              // "email": emailController.text,
               "phone":
                   legalPhoneNumber.text.removeAllWhitespace.replaceAll('+', '')
             },
       if (!isDeliverMyself)
         "address": {
-          // if (service.isPower!) 'power_id': powers[powerIndex!].id.toString(),
-
           "city_id": cities[cityIndex ?? 0].id,
           "address": addressController.text,
           "home": homeController.text,
@@ -231,7 +228,7 @@ class PlacingOrderController extends GetxController {
         },
       if (isDeliverMyself) "branch_id": branches[branchIndex ?? 0].id,
       "with_installation": installationIndex == 1,
-      "payment_type": "",
+      "payment_type": isPhysical ? "" : 'bank',
       if (!isPhysical) "with_didox": true,
       "products": List.generate(
         products.products!.length,
