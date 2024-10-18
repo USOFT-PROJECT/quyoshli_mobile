@@ -32,7 +32,7 @@ class _ProfilePageState extends State<ProfilePage> {
         if (profileController.isRegistered) {
           return Scaffold(
             appBar: AppBar(
-              toolbarHeight: 0,
+              toolbarHeight: 0.h,
               surfaceTintColor: Colors.white,
               backgroundColor: Colors.white,
             ),
@@ -470,7 +470,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       width: 80.w,
                       child: Image.asset("assets/images/im_profile.png"),
                     ),
-                     SizedBox(height: 24.h),
+                    SizedBox(height: 24.h),
                     Container(
                       // height: 56,
                       // width: 173,
@@ -485,7 +485,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         textAlign: TextAlign.center,
                       ),
                     ),
-                     SizedBox(height: 8.h),
+                    SizedBox(height: 8.h),
                     Text(
                       "please_login".tr,
                       textScaleFactor: 1.0,
@@ -493,7 +493,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           fontSize: 14.sp, fontWeight: FontWeight.w400),
                       textAlign: TextAlign.center,
                     ),
-                     SizedBox(height: 24.h),
+                    SizedBox(height: 24.h),
 
                     // login button
                     Container(
@@ -532,7 +532,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
 
-                    const SizedBox(height: 32),
+                    SizedBox(height: 32.h),
 
                     // settings / Настройки
                     Container(
@@ -561,30 +561,30 @@ class _ProfilePageState extends State<ProfilePage> {
                             context, controller, controller.isUzbekSelected);
                       },
                       child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 16, vertical: 12),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 16.w, vertical: 12.h),
                         color: Colors.transparent,
-                        height: 64,
+                        height: 64.h,
                         child: Row(
                           children: [
                             Container(
-                              width: 40,
-                              height: 50,
-                              padding: const EdgeInsets.all(8),
+                              width: 40.w,
+                              height: 50.h,
+                              padding: EdgeInsets.all(8.h),
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
+                                borderRadius: BorderRadius.circular(12.r),
                                 color: const Color.fromRGBO(241, 241, 241, 1),
                               ),
                               child: Container(
-                                height: 24,
-                                width: 24,
+                                height: 24.h,
+                                width: 24.w,
                                 child: Image.asset(
                                   'assets/icons/ic_lang.png',
                                   fit: BoxFit.cover,
                                 ),
                               ),
                             ),
-                            const SizedBox(width: 16),
+                            SizedBox(width: 16.w),
                             Expanded(
                               child: Text(
                                 "language".tr,
@@ -596,7 +596,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               ),
                             ),
                             Container(
-                              margin: const EdgeInsets.only(right: 16),
+                              margin: EdgeInsets.only(right: 16.w),
                               child: const Icon(Icons.keyboard_arrow_right),
                             ),
                           ],
@@ -610,32 +610,32 @@ class _ProfilePageState extends State<ProfilePage> {
                         controller.goAboutPage();
                       },
                       child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 16,
-                          vertical: 12,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 16.w,
+                          vertical: 12.h,
                         ),
                         color: Colors.transparent,
-                        height: 64,
+                        height: 64.h,
                         child: Row(
                           children: [
                             Container(
-                              width: 40,
-                              height: 50,
-                              padding: const EdgeInsets.all(8),
+                              width: 40.w,
+                              height: 50.h,
+                              padding: EdgeInsets.all(8.h),
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
+                                borderRadius: BorderRadius.circular(12.r),
                                 color: const Color.fromRGBO(241, 241, 241, 1),
                               ),
                               child: Container(
-                                height: 24,
-                                width: 24,
+                                height: 24.h,
+                                width: 24.w,
                                 child: Image.asset(
                                   'assets/icons/ic_info.png',
                                   fit: BoxFit.cover,
                                 ),
                               ),
                             ),
-                            const SizedBox(width: 16),
+                            SizedBox(width: 16.w),
                             Expanded(
                               child: Text(
                                 "about_app".tr,
@@ -647,7 +647,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               ),
                             ),
                             Container(
-                              margin: const EdgeInsets.only(right: 16),
+                              margin: EdgeInsets.only(right: 16.w),
                               child: const Icon(Icons.keyboard_arrow_right),
                             ),
                           ],
@@ -661,32 +661,32 @@ class _ProfilePageState extends State<ProfilePage> {
                         profileController.goTermsPage();
                       },
                       child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 16,
-                          vertical: 12,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 16.w,
+                          vertical: 12.h,
                         ),
                         color: Colors.transparent,
-                        height: 64,
+                        height: 64.h,
                         child: Row(
                           children: [
                             Container(
-                              width: 40,
-                              height: 50,
-                              padding: const EdgeInsets.all(8),
+                              width: 40.w,
+                              height: 50.h,
+                              padding: EdgeInsets.all(8.r),
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
+                                borderRadius: BorderRadius.circular(12.r),
                                 color: const Color.fromRGBO(241, 241, 241, 1),
                               ),
                               child: Container(
-                                height: 24,
-                                width: 24,
+                                height: 24.h,
+                                width: 24.w,
                                 child: Image.asset(
                                   'assets/icons/ic_offer.png',
                                   fit: BoxFit.cover,
                                 ),
                               ),
                             ),
-                            const SizedBox(width: 16),
+                            SizedBox(width: 16.w),
                             Expanded(
                               child: Text(
                                 "policy".tr,
@@ -699,7 +699,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               ),
                             ),
                             Container(
-                              margin: const EdgeInsets.only(right: 16),
+                              margin: EdgeInsets.only(right: 16.w),
                               child: const Icon(Icons.keyboard_arrow_right),
                             ),
                           ],
@@ -707,7 +707,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
 
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20.h),
                   ],
                 ),
               ),
