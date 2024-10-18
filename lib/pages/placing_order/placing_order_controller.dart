@@ -57,14 +57,14 @@ class PlacingOrderController extends GetxController {
 
   int calculateTotalPrice() {
     int basePrice = checkoutPreviewResponse.data?.totalPrice ?? 0;
-    int delivery = isDeliverMyself
-        ? 0
-        : (checkoutPreviewResponse.data?.deliveryPrice ?? 0);
+    // int delivery = isDeliverMyself
+    //     ? 0
+    //     : (checkoutPreviewResponse.data?.deliveryPrice ?? 0);
     int installation = installationIndex == 1
         ? (checkoutPreviewResponse.data?.installationPrice ?? 0)
         : 0;
 
-    return basePrice + delivery + installation;
+    return basePrice + installation;
   }
 
   apiLoadUser() async {
