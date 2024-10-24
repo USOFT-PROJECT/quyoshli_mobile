@@ -57,6 +57,7 @@ class HttpInterceptor implements InterceptorContract {
 
 class HttpRetryPolicy extends RetryPolicy {
   //Number of retry
+  //
   @override
   int maxRetryAttempts = 2;
 

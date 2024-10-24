@@ -12,9 +12,13 @@ class LoginController extends GetxController {
   login(bool isLoginFromHome) async {
     var phone = phoneController.text;
     var param = {"phone": phone};
+    try {
+      var response = await Network.POST(Network.API_AUTH, param);
+      Get.off(() => OtpSmsPage(phoneNumber: phone, isLoginFromHome: isLoginFromHome,));
+      LogService.i('response:  $response' ?? "error");
+    } on Exception catch (e) {
+      // TODO
+    }
 
-    Get.off(() => OtpSmsPage(phoneNumber: phone, isLoginFromHome: isLoginFromHome,));
-    var response = await Network.POST(Network.API_AUTH, param);
-    LogService.i(response ?? "error");
   }
 }

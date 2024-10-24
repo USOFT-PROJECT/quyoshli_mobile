@@ -124,7 +124,7 @@ class MainController extends GetxController {
 
       showProduct = Network.parseProduct(response!)!;
       update();
-      LogService.d(response.toString());
+      //LogService.d(response.toString());
     } catch (e) {
       LogService.e(e.toString());
     }

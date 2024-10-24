@@ -14,9 +14,9 @@ import 'package:quyoshli/services/utils_service.dart';
 import 'http_helper.dart';
 
 class Network {
-  static bool isTester = true;
+  static bool isTester = false;
   static String SERVER_DEV = "78.47.216.82";
-  static String SERVER_PROD = "78.47.216.82";
+  static String SERVER_PROD = "api.quyoshli.uz";
 
   static final client = InterceptedClient.build(
     interceptors: [HttpInterceptor()],
@@ -31,10 +31,10 @@ class Network {
   /* Http Requests */
   static Future<String?> GET(String api, Map<String, dynamic> params) async {
     try {
-      var uri = Uri.http(getServer(), api, params);
+      var uri = Uri.https(getServer(), api, params);
       var response = await client.get(uri);
       if (response.statusCode == 200) {
-        log(response.body);
+        //log(response.body);
         return response.body;
       } else {
         _throwException(response);
@@ -47,7 +47,7 @@ class Network {
 
   static Future<String?> POST(String api, Map<String, dynamic> params) async {
     try {
-      var uri = Uri.http(getServer(), api);
+      var uri = Uri.https(getServer(), api);
       var response = await client.post(uri, body: jsonEncode(params));
       if (response.statusCode == 200 || response.statusCode == 201) {
         return response.body;
@@ -63,7 +63,7 @@ class Network {
   static Future<String?> PUT(String api,
       {Map<String, dynamic> body = const {}}) async {
     try {
-      var uri = Uri.http(getServer(), api);
+      var uri = Uri.https(getServer(), api);
       var response = await client.put(uri, body: jsonEncode(body));
       if (response.statusCode == 200 || response.statusCode == 204) {
         return response.body;
@@ -78,7 +78,7 @@ class Network {
 
   static Future<String?> DEL(String api) async {
     try {
-      var uri = Uri.http(getServer(), api);
+      var uri = Uri.https(getServer(), api);
       var response = await client.delete(uri);
       if (response.statusCode == 200 || response.statusCode == 204) {
         return response.body;
